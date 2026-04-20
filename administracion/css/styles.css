@@ -1,0 +1,79 @@
+:root {
+    --bs-white: #ffffff;
+    --color-canifarma: #0C2340;
+}
+
+.bg-canifarma {
+    background-color: var(--color-canifarma) !important;
+    color: var(--bs-white) !important;
+}
+
+.bg-dg-canifarma {
+    background: #295AAD;
+    background: linear-gradient(0deg, rgba(41, 90, 173, 1) 0%, rgba(12, 35, 64, 1) 60%);
+    color: var(--bs-white) !important;
+}
+.logo_banner_deg{
+    background-color: #295AAD;
+}
+#signinAdmin {
+    background-image: url(../img/FONDO_ADMINISTRADORES.png);
+    background-size: cover;
+}
+
+#signinProveedores {
+    background-image: url(../img/FONDO_PROVEEDORES.png);
+    background-size: cover;
+    color: var(--bs-white) !important;
+}
+
+#signinProveedores h1 {
+    color: var(--bs-white) !important;
+}
+
+.border-top-blue {
+    border-top: var(--bs-blue) solid 5px !important;
+}
+
+.tab-content {
+    height: fit-content !important;
+}
+
+/* input load image */
+.filepond--root {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    font-family: inherit;
+}
+
+.filepond--root .filepond--drop-label, .filepond--drop-label.filepond--drop-label label {
+    cursor: pointer;
+}
+
+.wizard .sw-theme-arrows>.nav .pasos.completed.nav-link.done {
+    background: #48d368 !important;
+    border-color: #48d368 !important;
+}
+
+.nav-link.pasos.completed.inactive.done {
+    background: #48d368 !important;
+    border-color: #48d368 !important;
+}
+
+.wizard-primary.sw-theme-arrows>.nav .pasos.completed.nav-link.done:after {
+    border-left-color: #48d368 !important;
+}
+.style_tabs{
+    border-bottom: 5px solid rgb(164, 224, 178) !important; 
+}
+.dt-button.buttons-excel {
+    background-color: rgba(var(--bs-success-rgb), 1) !important; 
+    color: white !important;
+    border: rgba(var(--bs-success-rgb), 1) !important; 
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+.dt-button.buttons-excel:hover {
+    background-color: #218838 !important; 
+}
