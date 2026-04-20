@@ -1,0 +1,10 @@
+{
+  "name": "jc-innovation/ameh",
+  "description": "Proyecto AMEH con TCPDF y FPDI",
+  "require": {
+    "tecnickcom/tcpdf": "^6.10",
+    "setasign/fpdi": "^2.6",
+    "stripe/stripe-php": "^19.1",
+    "getbrevo/brevo-php": "^2.0"
+  }
+}

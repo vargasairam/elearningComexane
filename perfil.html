@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Plataforma Virtual - AMEH A. C.</title>
+    <meta charset="UTF-8" />
+
+    <link rel="shortcut icon" href="imgs/logo.png" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      http-equiv="Cache-control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+
+    <!-- Chrome, Firefox OS y Opera -->
+    <meta name="theme-color" content="#c02a29" />
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#c02a29" />
+    <!-- iOS Safari -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <meta name="author" content="JC Innovations ft. Alex P. Montero" />
+    <meta name="application-name" content="Plataforma Virtual - AMEH A. C." />
+    <meta name="description" content="Plataforma Virtual - AMEH A. C." />
+
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Plataforma Virtual - AMEH A. C." />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="Plataforma Virtual - AMEH A. C." />
+    <meta property="og:image" itemprop="image" content="imgs/bg_seo.png" />
+    <meta property="og:description" content="Plataforma Virtual - AMEH A. C." />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <main class="wrapper_global">
+      <aside class="aside_nav trans">
+        <button type="button" class="btn-close" aria-label="Close"></button>
+        <div class="box_brand">
+          <a href="/dashboard.html">
+            <img src="imgs/logo.png" alt="Logo AMEH A. C." class="brand_logo" />
+          </a>
+        </div>
+        <nav class="nav_menu">
+          <ul>
+            <li>
+              <a href="/dashboard.html" class="btn"
+                ><i class="ri-dashboard-line"></i><span>Dashboard</span></a
+              >
+            </li>
+            <li>
+              <a href="live.html" class="btn"
+                ><i class="ri-live-line"></i><span>Sala en vivo</span></a
+              >
+            </li>
+            <li>
+              <a href="#" class="btn"
+                ><i class="ri-file-download-line"></i
+                ><span>Programa en PDF</span></a
+              >
+            </li>
+            <li>
+              <button
+                class="btn d-flex justify-content-between"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseExample"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <i class="ri-video-on-line"></i>
+                <span class="w-100">On demand</span>
+                <i class="ri-arrow-down-s-line ri-xl"></i>
+              </button>
+              <div class="collapse box_collapse" id="collapseExample">
+                <ul>
+                  <li><a href="ondemand.html">Módulo 1</a></li>
+                  <li><a href="ondemand.html">Módulo 2</a></li>
+                  <li><a href="ondemand.html">Módulo 3</a></li>
+                  <li><a href="ondemand.html">Módulo 4</a></li>
+                </ul>
+              </div>
+            </li>
+            <li>
+              <a href="/constancias.html" class="btn"
+                ><i class="ri-award-line"></i><span>Constancias</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+        <footer class="footer">
+          ©2026 Solución desarrollada por
+          <a class="fw-bold" target="_blank" href="https://jc-innovation.com/"
+            >JC Innovation</a
+          >. All Rights Reserved.
+        </footer>
+      </aside>
+      <section class="content_global">
+        <header class="wrapper_header">
+          <div class="drawer_ttl_header">
+            <div class="box_mobile">
+              <button class="btn_menu"><i class="ri-menu-line"></i></button>
+              <a href="/dashboard.html">
+                <img
+                  src="imgs/logo.png"
+                  alt="Logo AMEH A. C."
+                  class="brand_logo"
+                />
+              </a>
+            </div>
+            <h2 class="fw-semibold m-0">Mi perfil</h2>
+          </div>
+          <div class="drawer_options_header">
+            <a
+              href="/live.html"
+              class="btn btn-danger btn_live btn-sm btn_notify"
+            >
+              <i class="ri-record-circle-fill"></i> <span>En vivo</span>
+              <i class="ri-arrow-right-line"></i>
+            </a>
+            <a href="#" type="button" class="btn btn-light btn-sm btn_info">
+              <i class="ri-error-warning-line ri-lg"></i>
+            </a>
+            <div class="dropdown">
+              <button
+                class="btn dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <div class="box_info_user">
+                  <small class="c_primary">Bienvenido</small>
+                  <h6 class="m-0"><span>Dr.</span> Carlos Marin</h6>
+                </div>
+                <div class="box_photo_user">
+                  <i class="ri-user-line"></i>
+                </div>
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/perfil.html"
+                    ><i class="ri-user-line"></i> Mi perfil</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="ri-error-warning-line"></i> Ayuda</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="ri-logout-circle-r-line"></i> Salir</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        <div class="content_profile">
+          <div class="cards mb-5">
+            <form class="form_login">
+              <div class="d-flex gap-2 justify-content-between">
+                <h5 class="">Datos de acceso</h5>
+                <div>
+                  <button type="button" class="btn btn-warning btn-sm btn_edit">
+                    <span>Modificar</span>
+                    <i class="ri-pencil-line"></i></button
+                  ><button
+                    type="button"
+                    class="btn btn-primary btn-sm d-none btn_save_info"
+                  >
+                    <span>Guardar</span> <i class="ri-save-line"></i>
+                  </button>
+                </div>
+              </div>
+              <hr />
+              <div class="row gx-4 gy-5">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="floatingInput"
+                      disabled
+                      value="name@example.com"
+                    />
+                    <label for="floatingInput">Correo electrónico</label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      disabled
+                      value="**********"
+                      class="form-control"
+                      id="floatingInput"
+                    />
+                    <label for="floatingInput">Contraseña</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="cards">
+            <form class="">
+              <div class="d-flex gap-2 justify-content-between">
+                <h5 class="">Datos profesionales</h5>
+                <div>
+                  <button type="button" class="btn btn-warning btn-sm btn_edit">
+                    <span>Modificar</span>
+                    <i class="ri-pencil-line"></i></button
+                  ><button
+                    type="button"
+                    class="btn btn-primary btn-sm d-none btn_save_info"
+                  >
+                    <span>Guardar</span> <i class="ri-save-line"></i>
+                  </button>
+                </div>
+              </div>
+              <hr />
+
+              <div class="row gx-4 gy-4">
+                <div class="col-sm-2">
+                  <div class="form-floating">
+                    <select
+                      disabled
+                      class="form-select"
+                      id="floatingSelect"
+                      aria-label="Prefijo"
+                    >
+                      <option value="1" selected>Dr.</option>
+                      <option value="2">Mr.</option>
+                      <option value="3">Mrs.</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="form-floating">
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="Nombres(s)"
+                    />
+                    <label for="floatingInput">Nombres(s)</label>
+                  </div>
+                </div>
+                <div class="col-sm-5">
+                  <div class="form-floating">
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="Apellidos"
+                    />
+                    <label for="floatingInput">Apellidos</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="Teléfono"
+                    />
+                    <label for="floatingInput">Teléfono</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <select
+                      disabled
+                      class="form-select"
+                      id="selectCategory"
+                      aria-label="Prefijo"
+                    >
+                      <option value="1" selected>Categoría</option>
+                      <option value="2">Cat 01</option>
+                      <option value="3">Cat 02</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="País"
+                    />
+                    <label for="floatingInput">País</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-floating">
+                    <input
+                      disabled
+                      type="text"
+                      class="form-control"
+                      id="floatingInput"
+                      placeholder="Estado"
+                    />
+                    <label for="floatingInput">Estado</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        menu();
+        forms();
+      });
+    </script>
+  </body>
+</html>
