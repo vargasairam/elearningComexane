@@ -117,7 +117,7 @@ class Catalogos extends Conexion
 
     public function GetSesionesAll(){
         $f_actual = date("Y-m-d H:i:s");
-        $sql = "SELECT * FROM e_conferencias";
+        $sql = "SELECT * FROM e_conferencias ORDER BY id DESC";
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->execute();
         $resultado = $sentencia->fetchAll(PDO::FETCH_OBJ);

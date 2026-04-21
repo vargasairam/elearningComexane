@@ -3,7 +3,6 @@ moment.locale('es');
 
 
 var sesiones = $('#tb_sesionesMensuales').DataTable({
-
     ajax: {
         url: `${BASE_URL}/administracion/controllers/catalogos.php?accion=getSesiones`,
         type: "post",
