@@ -28,16 +28,28 @@
 
 <script src="js/main.js"></script>
 
+<?php
+	if(isset($_SESSION[AMBIENTE]['usuario']['rol'])) {
+		$id_rol = $_SESSION[AMBIENTE]['usuario']['rol'];
+	} else {
+		$id_rol = "";
+	}
+?>
+
 <script>
-	var BASE_URL = "http://localhost/elearnigdev/";
+	var BASE_URL = "http://localhost/elearningComexane/";
 	//var BASE_URL = "<?php echo BASE_URL; ?>";
 </script>
 
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        menu();
-    });
+	let id_rol = "<?= $id_rol ?>";
+	if(id_rol != "") {
+		document.addEventListener("DOMContentLoaded", () => {
+			menu();
+		});
+	}
+    
 
     // timeOut es en milisegundos
 	function mostrarAviso(clase, mensaje, timeOut = 2500) {
@@ -66,8 +78,14 @@
 </script>
 
 <script>
+	if(id_rol == "alumno") {
+		mostrarProductosEnCarrito();
+	} else {
+		console.log("no es alumno");
+	}
+	
 	// Funcion para mostrar productos en el carrito
-	mostrarProductosEnCarrito();
+	
 	function mostrarProductosEnCarrito() {
 		let url = `${BASE_URL}/controller/alumno.php?accion=ProductosEnCarrito`;
 		$.ajax({

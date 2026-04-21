@@ -104,6 +104,37 @@ class Catalogos extends Conexion
         return $resultado;
     }
 
+    public function GetSesiones(){
+        $f_actual = date("Y-m-d H:i:s");
+        $sql = "SELECT * FROM e_conferencias WHERE fecha_hora_inicio > :f_actual";
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute([
+            ':f_actual' => $f_actual
+        ]);
+        $resultado = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $resultado;
+    }
+
+    public function GetSesionesAll(){
+        $f_actual = date("Y-m-d H:i:s");
+        $sql = "SELECT * FROM e_conferencias";
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $resultado;
+    }
+
+    public function getSesionById($id){
+        $sql = "SELECT * FROM e_conferencias WHERE id = :id";
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute([
+            ':id' => $id
+        ]);
+        $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $resultado;
+    }
+
+
 
     /*public function GetEstadosByIdPais(){
         $sql = "SELECT * FROM estado";

@@ -19,6 +19,7 @@
                 <ul>
                     <li><a href="?seccion=catalogos&accion=tipoProducto">Tipo de producto</a></li>
                     <li><a href="?seccion=catalogos&accion=cursos">Cursos</a></li>
+                    <li><a href="?seccion=catalogos&accion=sesionesMensuales">Sesiones mensuales</a></li>
                 </ul>
             </div>
         </li>

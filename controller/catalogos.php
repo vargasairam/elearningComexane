@@ -140,7 +140,21 @@ switch ($accion) {
             $estatus = true;
         }
         echo json_encode(['status'=>$estatus,'data'=>$data]);
-        break;
+    break;
+    case 'getSesiones':
+        $data = $cat->GetSesiones();
+        $estatus = false;
+        if(!empty($data)){
+            $estatus = true;
+        }
+
+        $data = [
+            'status'=>$estatus,
+            'data'=>$data
+        ];
+
+        echo json_encode($data);
+    break;
     default:
         echo 'DEFAULT';
         break;

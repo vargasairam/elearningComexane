@@ -123,6 +123,18 @@
 
                     </div>
 
+                    <div class="box_register text-center">
+
+                        <p>
+
+                            ¿Deseas registrarte a una sesión mensual?
+
+                        </p>
+
+                        <a href="registroSesion.php" class="btn btn-secondary w-100 my-3" style="background: #930721;border-color: #930721;color: white;">Registrar en sesión</a>
+
+                    </div>
+
                 </div>
 
             </div>

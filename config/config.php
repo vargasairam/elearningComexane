@@ -1,9 +1,9 @@
 <?php
 
-session_name("COMEXANE_SESSION");
+/*session_name("COMEXANE_SESSION");
 
 ini_set('session.cookie_path', '/'); 
-ini_set('session.cookie_domain', 'comexane.com');
+ini_set('session.cookie_domain', 'comexane.com');*/
 
 session_start();
 

@@ -23,8 +23,11 @@ switch ($accion) {
     case "login":
         if (isset($_POST['email']) && isset($_POST['password']) && $_POST['password'] != "" && $_POST['email'] != "") {
             $usuario = $U->login($_POST['email'], $_POST['password']);
+            
             if ($usuario->registrado) {
                 $id_sessionx = $H->crearSesion("admin", $usuario->id);
+                /*var_dump($_SESSION[AMBIENTE]['usuario']['rol']);
+                exit();*/
                 header("Location: ../");
                 exit;
             }

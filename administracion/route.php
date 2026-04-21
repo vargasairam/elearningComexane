@@ -32,6 +32,11 @@ switch ($seccion) {
                 $seccions = "catalogos";
                 $tittle = "Catálogo de Productos";
             break;
+            case 'sesionesMensuales':
+                $accion = "sesionesMensuales";
+                $seccions = "catalogos";
+                $tittle = "Sesiones mensuales";
+            break;
             default:
                 $seccions = "estructura";
                 $accion = "main_index";

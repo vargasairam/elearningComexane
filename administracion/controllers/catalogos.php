@@ -190,6 +190,14 @@ switch ($accion) {
         }
         echo json_encode($data);
     break;
+    case 'getSesiones':
+        $data['data'] = $C->GetSesionesAll();
+        echo json_encode($data);
+    break;
+    case 'getSesionById':
+        $data = $C->getSesionById($_POST['id_sesion']);
+        echo json_encode($data);
+    break;
     default:
         echo 'DEFAULT';
         break;
