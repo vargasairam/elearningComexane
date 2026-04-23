@@ -47,4 +47,14 @@ class Socios extends Conexion
         $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
         return $resultado;
     }
+
+    public function validarRegistroSesion($id_alumno, $id_sesion){
+        $sql = "SELECT count(*) as existe FROM sesionesasistentes WHERE socio_id=:id_alumno AND sesion_id=:id_sesion";
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->bindParam(':id_alumno', $id_alumno);
+        $sentencia->bindParam(':id_sesion', $id_sesion);
+        $sentencia->execute();
+        $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $resultado;
+    }
 }

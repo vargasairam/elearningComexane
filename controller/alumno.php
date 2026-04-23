@@ -10,10 +10,16 @@ require 'redpay.php';
 
 
 if (!isset($_SESSION[AMBIENTE]['usuario'])) {
-    if (!(isset($_GET['accion']) && ($_GET['accion'] == "login"))) {
+    /*var_dump((!isset($_GET['accion']) && ($_GET['accion'] == "login")));
+    exit;*/
+    if (!isset($_GET['accion']) || ($_GET['accion'] != "login" && $_GET['accion'] != "registroSesion")) {
         header("Location: ../signin.php");
         exit;
     }
+    /*if ((!(isset($_GET['accion']) && ($_GET['accion'] == "login"))) || (!(isset($_GET['accion']) && ($_GET['accion'] == "registroSesion")))) {
+        header("Location: ../signin.php");
+        exit;
+    }*/
 }
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
@@ -28,7 +34,7 @@ $S = new Socios();
 $accion = (isset($_GET['accion']) && $_GET['accion'] != "") ? $_GET['accion'] : "default";
 switch ($accion) {
     case "login":
-        if (isset($_POST['email']) && isset($_POST['password']) && $_POST['password'] != "" && $_POST['email'] != "") {
+        if (isset($_POST['email']) && isset($_POST['password']) && $_POST['password'] != "" && $_POST['email'] != "") {            
             $alumno = $A->login($_POST['email'], $_POST['password']);
             if ($alumno->registrado) {
                 $id_sessionx = $H->crearSesion("alumno", $alumno->id_socio);
@@ -43,7 +49,14 @@ switch ($accion) {
                 $H->crearMensaje("Bienvenido", "success");
                 header("Location: ../");
                 exit;
-            } 
+            } else {
+                $alumno = $S->busqSocioByCorreo($_POST['email']);
+                if(!empty($alumno)){
+                    $H->crearMensaje("Su correo se encuentra registrado, pero la contraseña en incorrecta", "danger");
+                    header("Location: ../signin.php");
+                    exit;
+                }
+            }
             
             $H->crearMensaje("Por favor registra tus datos en el formulario.", "danger");
             header("Location: ../registro.php");
@@ -110,6 +123,55 @@ switch ($accion) {
         $url = trim($data, '"');
         //var_dump($url);
         echo json_encode($url);
+        exit;
+    break;
+    case 'registroSesion':
+        $id_sesion = $_POST['sesion'];
+        $correo = $_POST['email'];
+        $alumno = $S->busqSocioByCorreo($correo);
+        if(empty($alumno)){
+            $data = [
+                'status' => 'error',
+                'msg' => "El correo no existe"
+            ];
+            echo json_encode($data);
+            exit;
+        }
+        $id_alumno = $alumno[0]->id_socio;
+        $folio = new DateTime();
+        $folio = $folio->format('dmy');
+        $folio .= $id_alumno;
+
+        $S->setTabla("sesionesasistentes");
+        $campos = array("sesion_id", "socio_id", "fecha_hora", "folio"); 
+        $valores = array($id_sesion, $id_alumno, date("Y-m-d H:i:s"), $folio);
+        $validarRegistro = $S->validarRegistroSesion($id_alumno, $id_sesion);
+        if($validarRegistro->existe > 0){
+            $data = [
+                'status' => 'warning',
+                'msg' => "Ya te has registrado a esta sesión"
+            ];
+            $H->crearMensaje($data['msg'], $data['status']);
+            header("Location: ../signin.php");
+            exit;
+        }
+        if($S->insertar($campos, $valores)){
+            $data = [
+                'status' => 'success',
+                'msg' => "Te registraste correctamente"
+            ];
+            $H->crearMensaje($data['msg'], $data['status']);
+            header("Location: ../signin.php");
+            exit;
+        } else {
+            $data = [
+                'status' => 'error',
+                'msg' => "Hubo un error, intente de nuevo"
+            ];
+            $H->crearMensaje($data['msg'], $data['status']);
+            header("Location: ../signin.php");
+            exit;
+        }
         exit;
     break;
     // ************ AMEH CASES ************

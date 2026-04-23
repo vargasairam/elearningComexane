@@ -14,6 +14,7 @@ function getSesiones() {
         success: function(response) {
             response = JSON.parse(response);
             if(response.status){
+                //console.log(response.data);
                 let option = document.createElement("option");
                 option.value = "";
                 option.textContent = "Selecciona una sesión";
@@ -21,7 +22,7 @@ function getSesiones() {
                 let data = response.data;
                 data.forEach(element => {
                     option.value = element.id;
-                    option.textContent = element.nombre;
+                    option.textContent = element.conferencia;
                     sesion.appendChild(option);
                 });
             } else{

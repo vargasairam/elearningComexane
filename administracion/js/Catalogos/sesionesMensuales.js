@@ -30,26 +30,38 @@ var sesiones = $('#tb_sesionesMensuales').DataTable({
         { 
             data: 'temario',
             render: function(data, type, row, meta) {
-                return `${data}`;
+                if(data == ""){
+                    return '--';
+                } else {
+                    return `${data}`;
+                }
             }
         },
         { 
             data: 'descripcion',
             render: function(data, type, row, meta) {
-                return `${data}`;
+                if(data == ""){
+                    return '--';
+                } else {
+                    return `${data}`;
+                }
             }
         },
         { 
             data: 'ponentes_ids',
             render: function(data, type, row, meta) {
-                return `${data}`;
-            }
+                if(data == 0){
+                    return '--';
+                } else {
+                    return `${data}`;
+                }
+            }   
         },       
         { 
             data: 'fecha_texto',
             render: function(data, type, row, meta) {
-                //return `${moment(data).format('LL')}`;
-                return `${data}`;
+                return `${moment(row.fecha_hora_inicio).format('LLL')}`;
+                //return `${data}`;
             }
         },
         { 
@@ -86,7 +98,7 @@ var sesiones = $('#tb_sesionesMensuales').DataTable({
             render: function(data, type, row, meta) {
                 return  `<div class="btn-group mb-3" role="group" aria-label="Default button group">
                     <button class="btn btn-outline-warning px-2 me-2 editar" title="Editar datos" data-sesion="${row.id}"><i class="fas fa-pencil"></i></button>
-                    <button class="btn btn-outline-secondary px-2 me-2 ver-portada" title="Ver poster" data-sesion="${row.id}"><i class="fa-solid fa-image"></i></button>   
+                    <button class="btn btn-outline-secondary px-2 me-2 ver-portada" title="Ver poster" data-img="${row.poster_sesion}"><i class="fa-solid fa-image"></i></button>   
                 </div> `
                 /* <button class="btn btn-outline-danger px-2 me-2 eliminar" title="Eliminar aviso" data-aviso="${row.id}"><i class="fa-solid fa-trash"></i></button> */
             }
@@ -108,7 +120,7 @@ var sesiones = $('#tb_sesionesMensuales').DataTable({
 
 $(document).on('submit', '#addConferencia', function(e){
     e.preventDefault();
-    let url = `${BASE_URL}/administracion/controllers/catalogos.php?accion=addConferencia`;
+    let url = `${BASE_URL}/administracion/controllers/catalogos.php?accion=addSesion`;
     let FORMDATA = new FormData($(this)[0]);
     form = $("#addConferencia")
     const modal = $("#modal_insertar");
@@ -177,11 +189,11 @@ $(document).on('click', '.editar', function(e){
     });
 });
 
-$(document).on('submit', '#updateVideo', function(e){
+$(document).on('submit', '#updateConferencia', function(e){
     e.preventDefault();
-    let url = `${BASE_URL}/administracion/controllers/cursos.php?accion=addVideo`;
+    let url = `${BASE_URL}/administracion/controllers/catalogos.php?accion=addSesion`;
     let FORMDATA = new FormData($(this)[0]);
-    form = $("#updateVideo")
+    form = $("#updateConferencia")
     const modal = $("#modal_update");
 
     fetch(url, {
@@ -192,7 +204,7 @@ $(document).on('submit', '#updateVideo', function(e){
     .then(data => {
         if (data.status == 'success') {
             mostrarAviso(data.status, data.msg);
-            videosCurso.ajax.reload();            
+            sesiones.ajax.reload();            
         } else {
             mostrarAviso(data.status, data.msg);
         }
@@ -208,7 +220,7 @@ $(document).on('submit', '#updateVideo', function(e){
 $(document).on('click', '.ver-portada', function(e){
     e.preventDefault();
     let img = $(this).data('img');
-    $('#div_imagen').html(`<img src="${BASE_URL}imgs/cursos_posters/portadas_videos/${img}" class="img-fluid rounded">`);
+    $('#div_imagen').html(`<img src="${BASE_URL}imgs/sesiones_mensuales/poster_sesion/${img}" class="img-fluid rounded">`);
     $('#modalImagen').modal('show');
 });
 

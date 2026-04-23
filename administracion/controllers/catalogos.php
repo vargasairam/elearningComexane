@@ -198,6 +198,71 @@ switch ($accion) {
         $data = $C->getSesionById($_POST['id_sesion']);
         echo json_encode($data);
     break;
+    case 'addSesion':   
+        $C->setTabla("e_conferencias");
+        $campos = array("conferencia", "ponentes_ids", "descripcion", "temario", "fecha_hora_inicio", "fecha_hora_fin", "canal1", "canal2", "duracion", "poster_sesion");
+
+        $fecha_inicio = $_POST["f_inicio"] . " " . $_POST["h_inicio"];
+        $fecha_fin = $_POST["f_fin"] . " " . $_POST["h_fin"];
+
+        $carpeta_destino = '../../imgs/sesiones_mensuales/poster_sesion/';        
+        $nombre_archivo = null;
+
+        if (!file_exists($carpeta_destino)) {
+            mkdir($carpeta_destino, 0777, true);
+        }
+
+        if(isset($_FILES['poster_sesion']) && $_FILES['poster_sesion']['error'] === 0){
+            $poster_modulo = $_FILES['poster_sesion'];
+            $poster_name = $poster_modulo['name'];
+
+            $nombre_archivo = uniqid() . "_" . $poster_modulo['name'];
+            $ruta_completa = $carpeta_destino  . $nombre_archivo;
+            move_uploaded_file($poster_modulo['tmp_name'], $ruta_completa);
+        }
+
+        if(isset($_POST['id_update'])){
+            $datos = $C->getSesionById($_POST['id_update']);
+
+            if($nombre_archivo == null){
+                $nombre_archivo = $datos->poster_sesion;
+            }
+
+            $valores = array($_POST["titulo"], $_POST["ponentes"], $_POST["detalles"], $_POST["tema"],  $fecha_inicio, $fecha_fin, $_POST["canal1"], $_POST["canal2"], $_POST["duracion"], $nombre_archivo);
+            $condicion = "id = ". $_POST['id_update'];
+            $result = $C->actualizar($campos, $valores, $condicion); 
+
+            if($result){
+                $data = [
+                    'status' => 'success',
+                    'msg' => "Actualizado correctamente"
+                ];
+            } else {
+                $data = [
+                    'status' => 'error',
+                    'msg' => "Hubo un error, intente de nuevo"
+                ];
+            }
+        } else {
+            $valores = array($_POST["titulo"], $_POST["ponentes"], $_POST["detalles"], $_POST["tema"], $fecha_inicio, $fecha_fin, $_POST["canal1"], $_POST["canal2"], $_POST["duracion"], $nombre_archivo);
+
+            $result = $C->insertar($campos, $valores); 
+
+            if($result > 0){
+                $data = [
+                    'status' => 'success',
+                    'msg' => "Agregado correctamente"
+                ];
+            } else {
+                $data = [
+                    'status' => 'error',
+                    'msg' => "Hubo un error, intente de nuevo"
+                ];
+            }
+        }
+        
+        echo json_encode($data);
+    break;
     default:
         echo 'DEFAULT';
         break;
