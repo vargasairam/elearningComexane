@@ -134,6 +134,16 @@ class Catalogos extends Conexion
         return $resultado;
     }
 
+    public function getModulosCurso($id_curso){
+        $sql = "SELECT * FROM e26_modulos_cursos WHERE id_curso = :id_curso";
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute([
+            ':id_curso' => $id_curso
+        ]);
+        $resultado = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $resultado;
+    }
+
 
 
     /*public function GetEstadosByIdPais(){

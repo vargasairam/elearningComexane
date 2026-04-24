@@ -67,10 +67,10 @@ switch ($seccion) {
     break;
     case 'cursos':
         $id = $_GET['curso'];
-        $curso = $CC->getCursoById($id);
+        $curso_info = $CC->getCursoById($id);
         $accion = "detallesCurso";
         $seccions = "misCursos";
-        $tittle = $curso[0]->titulo;
+        $tittle = $curso_info[0]->titulo;
     break;
     case "pagar":
         $id = $_SESSION[AMBIENTE]['usuario']['id'];

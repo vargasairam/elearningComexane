@@ -1,3 +1,13 @@
+<?php
+    $f_inicio = date("d-m-Y", strtotime($curso_info[0]->fecha_hora_inicio));
+    $f_fin = date("d-m-Y", strtotime($curso_info[0]->fecha_hora_fin));
+
+    if($curso_info[0]->modulos == 1){
+        $modulos = $CC->getModulosCurso($curso_info[0]->id);
+    } else {
+        $videos = $CC->getVideosCurso($curso_info[0]->id);
+    }
+?>
 <section class="content_global">
     <?php include_once "view/estructura/header.php"; ?>
     <div
@@ -11,64 +21,35 @@
     aria-labelledby="tab-home">
 
     <div class="card shadow-sm">
-
         <div class="card-body">
+            <h5 class="card-title">Fecha de inicio: <?php echo $f_inicio; ?></h5>
+        </div>
+    </div>
 
-            <h5 class="card-title">Fecha de inicio</h5>
+    <div class="w-100">
+        <?php if(!empty($modulos)){ ?>
+            <ul class="nav nav-pills nav-fill" id="tabsExample" role="tablist">            
+                <?php foreach($modulos as $modulo){ ?>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link btn-lg active" id="tab-home" data-modulo="<?php echo $modulo->id; ?>" data-bs-toggle="pill" data-bs-target="#content-home" type="button" role="tab"
+                            aria-controls="content-home" aria-selected="true">
+                            <?php echo $modulo->titulo; ?>
+                        </button>
+                    </li>
 
-            <p class="card-text fs-4"><?= $modulos->fecha_inicio_texto ?></p>
+                <?php } ?>
+            </ul>
+        <?php } ?>
+
+        
+
+        <div class="tab-content mt-5" id="tabsExampleContent">
 
         </div>
 
     </div>
-
-    <!-- <form class="box_filters">
-
-        <div class="input-group">
-
-            <span class="input-group-text" id="basic-addon1"><i class="ri-search-line"></i></span>
-
-            <input
-
-                type="text"
-
-                class="form-control "
-
-                placeholder="Buscar por nombre"
-
-                aria-label="Username"
-
-                aria-describedby="basic-addon1" />
-
-        </div>
-
-        <select
-
-            class="form-select"
-
-            aria-label="Selecciona nivel de curso"
-
-            name="type_nivel">
-
-            <option selected>Nivel de cursos</option>
-
-            <option value="1">Básico</option>
-
-            <option value="2">Intermedio</option>
-
-            <option value="3">Avanzado</option>
-
-        </select>
-
-        <button type="button" class="btn btn-primary btn_search">
-
-            <i class="ri-search-line"></i> <span>Buscar curso</span>
-
-        </button>
-
-    </form> -->
-
-    <?php if ($modulos->activar): ?>
+    
+    <!-- <?php if ($modulos->activar): ?>
 
         <div class="box_items_cursos mt-5">
             <?php
@@ -192,7 +173,7 @@
 
         </div>
 
-    <?php endif; ?>
+    <?php endif; ?> -->
 
 </div>
 </section>

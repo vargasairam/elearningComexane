@@ -31,7 +31,7 @@
                     <div class="collapse box_collapse" id="collapseExample">
                         <ul>
                             <?php foreach($cursos as $curso){ ?>
-                                <li><a href="?seccion=cursos&accion=detalle&curso=<?= $curso->id ?>"><?= $curso->titulo ?></a></li>
+                                <li><a href="?seccion=cursos&accion=detalle&curso=<?= $curso->id_curso ?>"><?= $curso->titulo ?></a></li>
                             <?php } ?>
                         </ul>
                     </div>
