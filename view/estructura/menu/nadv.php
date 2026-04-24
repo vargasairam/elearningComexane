@@ -43,7 +43,7 @@
             <a href="?seccion=live" class="btn"><i class="ri-play-circle-line"></i><span>Sala en vivo</span></a>
         </li>
         <li>
-            <a href="?seccion=live" class="btn"><i class="ri-play-circle-line"></i><span>Sesiones mensuales</span></a>
+            <a href="?seccion=sesionMensual" class="btn"><i class="ri-calendar-line"></i><span>Sesiones mensuales</span></a>
         </li>
         <!-- <li>
             <a href="<?= BASE_URL ?>elearnigdev/redireccionPDF.php?recurso=programa" target="_blank" class="btn"><i class="ri-file-ai-line"></i><span>Programa en PDF</span></a>

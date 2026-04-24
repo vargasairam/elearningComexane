@@ -3,8 +3,11 @@ require_once('model/transmision.php');
 $T = new Transmision();
 require_once __DIR__ . '/model/catalogos.php';
 require_once __DIR__ . '/model/socios.php';
+require_once __DIR__ . '/model/sesionesMensuales.php';
+
 $CC = new Catalogos();
 $S = new Socios();
+
 //$transmision = $T->getTransmision();
 $seccion = '';
 
@@ -69,7 +72,6 @@ switch ($seccion) {
         $seccions = "misCursos";
         $tittle = $curso[0]->titulo;
     break;
-
     case "pagar":
         $id = $_SESSION[AMBIENTE]['usuario']['id'];
         require_once 'model/AlumnoFacturacion.php';
@@ -77,6 +79,14 @@ switch ($seccion) {
         $seccions = "pagos";
         $accion = "pagar";
         $tittle = "Pagar productos";
+    break;
+    case "sesionMensual":
+        $SM = new SesionMensual();
+        $sesiones = $SM->getSesionesMensualesByUsuario($_SESSION[AMBIENTE]['usuario']['id']);
+        $id = $_SESSION[AMBIENTE]['usuario']['id'];
+        $seccions = "misCursos";
+        $accion = "sesionMensual";
+        $tittle = "Sesiones mensuales";
     break;
     default:
         $seccions = "estructura";

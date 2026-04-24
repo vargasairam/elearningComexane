@@ -31,8 +31,9 @@
                     </div>
                 <?php } ?>
         </div>
-        <?Php
-        if ($user->categoria_id == 5 && !$H->moduloPagado($user->id, $transmision->id)) { ?>
+        <?php
+        exit;
+        if ($user->id_categoria == 5 && !$H->moduloPagado($user->id, $transmision->id)) { ?>
             <div class="w-100">
                 <a class="uk-alert-close" uk-close></a>
                 <center>
