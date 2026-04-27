@@ -2,23 +2,23 @@
 
 
 
-class Transmision extends Conexion
+class Transmision extends Conexion {
 
-{
-
-
-
-    public function __construct()
-
-    {
-
+    public function __construct() {
         parent::__construct();
-
         $this->setTabla("alumnos");
     }
 
+    public function videoVista($video_id, $usuario_id){
+        $sql = "SELECT count(*) as visto, minutos as tiempo, id FROM e26_progreso_videos WHERE socio_id = " . $usuario_id . " and video_id = " . $video_id;
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute(array());
+        $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $resultado;
+    }
 
 
+    /* FUNCIONES AMEH */ 
     public function getTransmision()
 
     {
@@ -44,25 +44,6 @@ class Transmision extends Conexion
         $sentencia->bindParam(':modulo_id', $modulo_id);
 
         $sentencia->execute();
-
-        $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
-
-        return $resultado;
-    }
-
-
-
-
-
-    public function videoVista($video_id, $usuario_id)
-
-    {
-
-        $sql = "SELECT count(*) as visto, minutos as tiempo, id FROM progresos_videos WHERE usuario_id=" . $usuario_id . " and video_id=" . $video_id;
-
-        $sentencia = $this->conexion_db->prepare($sql);
-
-        $sentencia->execute(array());
 
         $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
 

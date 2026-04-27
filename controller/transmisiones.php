@@ -20,6 +20,37 @@ $T = new Transmision();
 
 $accion = (isset($_GET['accion']) && $_GET['accion'] != "") ? $_GET['accion'] : "default";
 switch ($accion) {
+    case 'addminutoVideo':
+        $T->setTabla("e26_progreso_videos");
+        $vista = $T->videoVista($_POST['video_id'], $_POST['usuario_id']);
+
+        if ($vista->visto) {
+            $campos = array("minutos", "ultima_vez");
+            $valores = array($vista->tiempo + 1, date("Y-m-d H:i:s"));
+            $condicion = " id=" . $vista->id;
+
+            if ($T->actualizar($campos, $valores, $condicion)) {
+                echo json_encode(array('response' => 'ok'));
+                exit;
+            } else {
+                echo json_encode(array('response' => 'fail'));
+                exit;
+            }
+        } else {
+            $campos = array("socio_id", "video_id", "minutos", "ultima_vez");
+            $valores = array($_POST["usuario_id"], $_POST["video_id"], 1, date("Y-m-d H:i:s"));
+
+            if ($T->insertar($campos, $valores)) {
+                echo json_encode(array('response' => 'ok'));
+                exit;
+            } else {
+                echo json_encode(array('response' => 'fail'));
+                exit;
+            }
+        }
+    break;
+
+    /* FUNCIONES AMEH */
     case "guardarLive":
         //NOTA Francisco------------------------------------------------
         $modulo = $T->modulofin($_SESSION[AMBIENTE]['usuario']['id']); //! Busca todos los modulos pagos 
@@ -95,54 +126,9 @@ switch ($accion) {
 
         break;
 
-    case 'addminutoVideo':
-
-        $T->setTabla("progresos_videos");
-
-        $vista = $T->videoVista($_GET['video_id'], $_GET['usuario_id']);
-
-        if ($vista->visto) {
-
-            $campos = array("minutos", "ultima_vez");
-
-            $valores = array($vista->tiempo + 1, date("Y-m-d H:i:s"));
-
-            $condicion = " id=" . $vista->id;
-
-            if ($T->actualizar($campos, $valores, $condicion)) {
-
-                echo json_encode(array('response' => 'ok'));
-
-                exit;
-            } else {
-
-                echo json_encode(array('response' => 'fail'));
-
-                exit;
-            }
-        } else {
-
-            $campos = array("usuario_id", "video_id", "minutos", "ultima_vez");
-
-            $valores = array($_GET["usuario_id"], $_GET["video_id"], 1, date("Y-m-d H:i:s"));
-
-            if ($T->insertar($campos, $valores)) {
-
-                echo json_encode(array('response' => 'ok'));
-
-                exit;
-            } else {
-
-                echo json_encode(array('response' => 'fail'));
-
-                exit;
-            }
-        }
-
-        break;
+    
 
     case 'ended':
-
         if ($_GET['accion'] == "ended" && isset($_GET['video_id']) && is_numeric($_GET['video_id'])) {
 
             $T->setTabla("progresos_videos");

@@ -66,11 +66,26 @@ switch ($seccion) {
         $id = $_SESSION[AMBIENTE]['usuario']['id'];
     break;
     case 'cursos':
-        $id = $_GET['curso'];
-        $curso_info = $CC->getCursoById($id);
-        $accion = "detallesCurso";
-        $seccions = "misCursos";
-        $tittle = $curso_info[0]->titulo;
+        switch (isset($_GET['accion']) ? $_GET['accion'] : '') {
+            case 'recording':
+                include __DIR__ . '/model/videos.php';
+                $V = new Videos();
+                $video = $V->getVideoById($_GET['id']);
+                $accion = "recording";
+                $seccions = "misCursos";
+                $tittle = $video->titulo;
+            break;
+            default:
+                $id = $_GET['curso'];
+                $curso_info = $CC->getCursoById($id);
+                $accion = "detallesCurso";
+                $seccions = "misCursos";
+                $tittle = $curso_info[0]->titulo;
+        }
+        
+        /*$accion = "detallesCurso";
+        $seccions = "misCursos";*/
+        
     break;
     case "pagar":
         $id = $_SESSION[AMBIENTE]['usuario']['id'];
@@ -144,7 +159,7 @@ switch ($seccion) {
                 $accion = "recording";
                 $seccions = "ondemand";
                 $tittle = "On demand";
-                break;
+            break;
             default:
                 $accion = "ondemand";
                 $seccions = "ondemand";

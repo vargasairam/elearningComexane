@@ -20,11 +20,15 @@
 
 <!-- Moment JS Libreria -->
 <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+
 <!-- Currency JS Libreria -->
 <script src="https://unpkg.com/currency.js@2.0.4/dist/currency.min.js"></script>
 
 <!-- ImagesLoaded JS Libreria -->
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+<!-- Vimeo API Player JS Libreria -->
+<script src="https://player.vimeo.com/api/player.js"></script>
 
 <script src="js/main.js"></script>
 

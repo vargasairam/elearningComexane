@@ -1,18 +1,47 @@
 <?php
 
-class Videos extends Conexion
+class Videos extends Conexion {
 
-{
-
-    public function __construct()
-
-    {
-
+    public function __construct() {
         parent::__construct();
     }
 
-    public function getVideosByRangoDay($modulo, $search = "", $tipo = "ondemand")
-    {
+    public function getVideoById($id) {
+        $sql = "SELECT evc.*, emc.titulo as tituloModulo, ec.titulo AS tituloCurso FROM e26_videos_cursos evc LEFT JOIN e26_modulos_cursos emc ON emc.id = evc.id_modulo LEFT JOIN e26_cursos ec on ec.id = evc.id_curso WHERE evc.id = " . $id;
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute(array());
+        $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
+        return $resultado;
+    }
+
+    public function getProgresoVideo($video, $ususario, $minutos) {
+        $sql = "SELECT count(id) as progreso, minutos, completo FROM e26_progreso_videos WHERE video_id = " . $video . " and socio_id = " . $ususario;
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute(array());
+        $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
+        $progreso = 0;
+        if ($resultado->progreso) {
+            if ($resultado->completo) {
+                $progreso = 100;
+            } else {
+                $progreso = ($resultado->minutos / $minutos) * 100;
+                if ($progreso >= 95) {
+                    $progreso = 100;
+                }
+            }
+        } else {
+            $resultado->completo = 0;
+            $resultado->minutos = 0;
+        }
+
+        $resultado->progreso = ceil($progreso);
+        return $resultado;
+    }
+
+
+
+    /* FUNCIONES AMEH */
+    public function getVideosByRangoDay($modulo, $search = "", $tipo = "ondemand") {
         $busqueda = "";
         if ($search != "") {
             $textoabuscarsplit = str_word_count($search, 1);
@@ -35,61 +64,6 @@ class Videos extends Conexion
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->execute(array());
         $resultado = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        return $resultado;
-    }
-
-    public function getProgresoVideo($video, $ususario, $minutos)
-
-    {
-
-        $sql = "SELECT count(id) as progreso, minutos, completo FROM progresos_videos WHERE video_id=" . $video . " and usuario_id=" . $ususario;
-
-        $sentencia = $this->conexion_db->prepare($sql);
-
-        $sentencia->execute(array());
-
-        $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
-
-        $progreso = 0;
-
-        if ($resultado->progreso) {
-
-            if ($resultado->completo) {
-
-                $progreso = 100;
-            } else {
-
-                $progreso = ($resultado->minutos / $minutos) * 100;
-
-                if ($progreso >= 95) {
-
-                    $progreso = 100;
-                }
-            }
-        } else {
-
-            $resultado->completo = 0;
-
-            $resultado->minutos = 0;
-        }
-
-        $resultado->progreso = ceil($progreso);
-
-        return $resultado;
-    }
-
-    public function getVideoById($id)
-
-    {
-
-        $sql = "SELECT *  FROM videos WHERE id=" . $id;
-
-        $sentencia = $this->conexion_db->prepare($sql);
-
-        $sentencia->execute(array());
-
-        $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
-
         return $resultado;
     }
 
