@@ -37,6 +37,11 @@ switch ($seccion) {
                 $seccions = "catalogos";
                 $tittle = "Sesiones mensuales";
             break;
+            case 'foroResidentes':
+                $accion = "foroResidentes";
+                $seccions = "catalogos";
+                $tittle = "Videos para el Foro de Residentes";
+            break;
             default:
                 $seccions = "estructura";
                 $accion = "main_index";

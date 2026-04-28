@@ -2,7 +2,7 @@
     $cursos = $A->GetCursosPagados($_SESSION[AMBIENTE]['usuario']['id']);
 ?>
 
-<nav class="nav_menu" style="background: linear-gradient( 135deg, #C81F3D 0%, #9f2340 30%, #6b2a43 60%, #302D45 100% );">
+<nav class="nav_menu">
     <ul>
         <li>
             <a href="<?= BASE_URL ?>elearningComexane/" class="btn"><i class="ri-dashboard-line"></i><span>Inicio</span></a>
@@ -39,8 +39,11 @@
             ?>
            
         </li>
-        <li>
+        <!-- <li>
             <a href="?seccion=live" class="btn"><i class="ri-play-circle-line"></i><span>Sala en vivo</span></a>
+        </li> -->
+        <li>
+            <a href="?seccion=foroResidentes" class="btn"><i class="ri-play-circle-line"></i><span>Foro en residentes</span></a>
         </li>
         <li>
             <a href="?seccion=sesionMensual" class="btn"><i class="ri-calendar-line"></i><span>Sesiones mensuales</span></a>

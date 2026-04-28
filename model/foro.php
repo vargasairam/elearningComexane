@@ -1,19 +1,25 @@
 <?php
-class SesionMensual extends Conexion
+class ForoResidentes extends Conexion
 {
     public function __construct()
     {
         parent::__construct();
-        $this->setTabla("e_conferencias");
+        $this->setTabla("e26_foro_residentes");
     }
 
-    public function getSesionesMensualesByUsuario($id_usuario) {
-        $f_actual = date("Y-m-d H:i:s");
-        $sql = "SELECT ec.* FROM sesionesasistentes sa LEFT JOIN e_conferencias ec on sa.sesion_id = ec.id WHERE sa.socio_id = :id_socio 
-        ORDER BY ec.fecha_hora_inicio ASC";
+    public function getVideosForo() {
+        $sql = "SELECT * FROM e26_foro_residentes fr ORDER BY fr.fecha_hora_inicio DESC";
+        $sentencia = $this->conexion_db->prepare($sql);
+        $sentencia->execute();
+        $resultado = $sentencia->fetchAll(PDO::FETCH_OBJ);
+        return $resultado;
+    }
+
+    public function getVideoForoById($id_video) {
+        $sql = "SELECT * FROM e26_foro_residentes fr WHERE fr.id = :id_video";
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->execute([
-            ':id_socio' => $id_usuario
+            ':id_video' => $id_video
         ]);
         $resultado = $sentencia->fetch(PDO::FETCH_OBJ);
         return $resultado;

@@ -44,6 +44,24 @@ function sumarMinuto () {
     });
 }
 
+function marcarVideo () {
+    $.ajax({
+        url: 'controller/sesiones.php?accion=endedVideo',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            video_id: videoId,
+            usuario_id: user
+        }
+    })
+    .done(function(response) {
+        console.log("SUCCESS", response);
+    })
+    .fail(function(error) {
+        console.error("ERROR AJAX", error);
+    });
+}
+
 
 /*var avance=0;
                

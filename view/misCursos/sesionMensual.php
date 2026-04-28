@@ -29,9 +29,11 @@
                         <h4>Sesión Mensual: <?php echo $sesiones->conferencia; ?> | <?php echo $sesiones->temario; ?></h4>
                     </div>
                     <div class="embed-video">
-                        <iframe src="https://player.vimeo.com/video/<?php echo $sesiones->canal1; ?>?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479%2Fembed" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                        <iframe id="video-v" 
+                            src="https://player.vimeo.com/video/<?php echo $sesiones->canal1; ?>?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479%2Fembed" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        </iframe>
                         <!-- <iframe
-                            id="videoFrame"
+                            id="video-v"
                             src="https://vimeo.com/event/<?= $sesiones->canal1 ?>/embed/interaction"
                             frameborder="0"
                             allow="autoplay; fullscreen; picture-in-picture"
@@ -137,6 +139,10 @@
         <?php } ?>        
     </div>
 </section>
+<script>
+    var sesionId = <?= $sesiones->id ?>;
+    var user = <?= $_SESSION[AMBIENTE]['usuario']['id'] ?>;
+</script>
 
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 

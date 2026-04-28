@@ -23,6 +23,9 @@
                 </ul>
             </div>
         </li>
+        <li>
+            <a href="?seccion=catalogos&accion=foroResidentes" class="btn"><i class="ri-dashboard-line"></i><span>Videos Foro</span></a>
+        </li>
         <!-- <li>
             <a href="<?= BASE_URL ?>elearnigdev/redireccionPDF.php?recurso=programa" target="_blank" class="btn"><i class="ri-file-ai-line"></i><span>Programa en PDF</span></a>
         </li> -->

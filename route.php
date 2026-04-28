@@ -105,6 +105,26 @@ switch ($seccion) {
         $accion = "sesionMensual";
         $tittle = "Sesiones mensuales";
     break;
+    case 'foroResidentes':
+        require_once __DIR__ .'/model/foro.php';
+        $FR = new ForoResidentes();
+        switch (isset($_GET['accion']) ? $_GET['accion'] : '') {
+            case 'recording':
+                $video = $FR->getVideoForoById($_GET['id']);
+                $accion = "recordingForo";
+                $seccions = "misCursos";
+                $tittle = $video->titulo;
+            break;
+            default:
+                $sesionesForo = $FR->getVideosForo();
+                $id = $_SESSION[AMBIENTE]['usuario']['id'];
+                $seccions = "misCursos";
+                $accion = "foro";
+                $tittle = "Foro en residentes";
+        }
+       
+        
+    break;
     default:
         $seccions = "estructura";
         $accion = "main_index";
