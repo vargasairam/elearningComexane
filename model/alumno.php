@@ -50,6 +50,17 @@ class Alumno extends Conexion
         return $resultado;
     }
 
+	public function validarCurso($id, $id_curso) {
+		$sql = "SELECT COUNT(*) as disponible, c.titulo, c.descripcion, c.precio, c.poster FROM e26_cursos_alumnos ca LEFT JOIN e26_pagos_cursos pc on ca.id_pago = pc.id LEFT JOIN e26_cursos c ON ca.id_curso = c.id WHERE pc.id_alumno = :id and pc.status = 'PAGADO' and ca.id_curso = :id_curso";
+		$sentencia = $this->conexion_db->prepare($sql);
+		$sentencia->execute([
+			':id'=>$id,
+			':id_curso'=>$id_curso
+		]);
+		$resultado = $sentencia->fetch(PDO::FETCH_OBJ);
+		return $resultado;
+	}
+
 	public function hema($email)
     {
         $sql = "SELECT * FROM e26_alumnos WHERE email='$email'";
