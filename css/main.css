@@ -155,6 +155,18 @@ a {
 
 /* ---- grid-item ---- */
 
+.bg-constancias {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../imgs/banner_constancias.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-sesion {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../imgs/banner_sesion_mensual.png');
+  background-size: cover;
+  background-position: center;
+}
+
 
 
 .cards {

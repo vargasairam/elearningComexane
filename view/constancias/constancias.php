@@ -5,16 +5,12 @@
     <div class="content_constancias">
 
         <h4 class="fw-semibold">
-
-            CURSO AMEH, CURSO DE ACTUALIZACIÓN EN HEMATOLOGÍA <?= date("Y") ?>
-
+            Plataforma Virtual COMEXANE A.C. <?= date("Y") ?>
         </h4>
 
         <div class="alert alert-success p-3" role="alert">
-
-            Las constancias estarán disponibles una vez que haya completado al menos el 80 % de visualización de cada módulo,
-            considerando tanto el contenido on-demand como las sesiones en vivo.
-
+            Las constancias estarán disponibles una vez que haya completado al menos el 80 % de visualización de cada curso,
+            considerando todo el material disponible.
         </div>
 
         <div class="cards">
@@ -27,25 +23,21 @@
 
                         <tr>
 
-                            <th class="fw-semibold" scope="col">Imagen</th>
+                            <th class="fw-semibold" scope="col">Curso</th>
 
                             <th class="fw-semibold" scope="col">Tema</th>
 
-                            <th class="fw-semibold" scope="col">Módulo</th>
+                            <th class="fw-semibold" scope="col">Módulos</th>
 
-                            <th class="fw-semibold" scope="col">
+                            <th class="fw-semibold" scope="col">Porcentaje visualizado %</th>
 
-                                Porcentaje visualizado %
-
-                            </th>
-
-                            <th class="fw-semibold" scope="col">Constancias</th>
+                            <th class="fw-semibold" scope="col">Constancia</th>
 
                         </tr>
 
                     </thead>
 
-                    <tbody>
+                    <!-- <tbody>
 
                         <?php
 
@@ -146,7 +138,7 @@
 
                             </tr>
 
-                    </tbody>
+                    </tbody> -->
 
                 </table>
 

@@ -15,16 +15,16 @@
             </div>
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4">
                 <div class="box_aside_dashboard">
-                    <h4 class="mb-3">Mi cuenta</h4>
+                    <h4 class="mb-3">Mi cuenta</h4>                    
                     <div class="item_user_info cards">
-                        <h5 class="fw-semibold mb-1"><?= $user->prefijo . " " . $user->n_constancia ?></h5>
+                        <h5 class="fw-semibold mb-1"><?= $user->prefijotxt . " " . $user->nombreconstancia ?></h5>
                         <h6 class="mb-0">Médico Cirujano</h6>
                         <p class="fw-light"><?= $user->email ?></p>
                         <div class="mt-3">
                             <!-- <p class="mb-1">
                             <i class="ri-hospital-line"></i> Centro Médico CDMX
                         </p> -->
-                            <p class="mb-0"><i class="ri-phone-line"></i><?= $user->telefono ?></p>
+                            <p class="mb-0"><i class="ri-phone-line"></i><?= $user->celular ?></p>
                         </div>
                         <div class="d-flex justify-content-end">
                             <a href="?seccion=perfil" class="btn btn-light btn-sm">Ver más <i class="ri-arrow-right-line"></i></a>

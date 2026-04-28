@@ -15,13 +15,19 @@
                             <i class="icon ri-play-circle-line text-white"></i>
                         </div>
 
-                        <div class="cards align-self-start flex-fill">
-                            <h3>Constancias</h3>
+                        <div class="cards align-self-start flex-fill bg-constancias">
                             <div class="d-flex justify-content-end">
-                                <a href="?seccion=constancias" claass="btn btn-link btn-sm">Ver más <i class="ri-arrow-right-line"></i></a>
+                                <a href="?seccion=constancias" class="btn btn-link btn-sm text-white">Ver más <i class="ri-arrow-right-line"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="cards align-self-start flex-fill bg-sesion">
+                            <!-- <h3>Sesión Mensual</h3> -->
+                            <div class="d-flex justify-content-end">
+                                <a href="?seccion=sesionMensual" class="btn btn-link btn-sm text-white">Ver más <i class="ri-arrow-right-line"></i></a>
                             </div>
 
-                            <i class="icon ri-award-line text-white"></i>
+                            <!-- <i class="icon ri-award-line text-white"></i> -->
                         </div>
 
                         <!-- <div class="cards align-self-start flex-fill">

@@ -122,8 +122,22 @@ switch ($seccion) {
                 $accion = "foro";
                 $tittle = "Foro en residentes";
         }
-       
-        
+    break;
+    case 'constancias':
+        /*require_once('model/constancia.php');
+        require_once('model/congreso.php');
+        require_once('model/videos.php');
+
+        $C = new Constancia();
+        $Congreso = new Congreso();
+        $V = new Videos();
+
+        $modulos = $A->modulP($user->id);
+        $dias = $Congreso->getAllDias(2025);*/
+        $accion = "constancias";
+
+        $seccions = "constancias";
+        $tittle = "Constancias";
     break;
     default:
         $seccions = "estructura";
@@ -140,22 +154,7 @@ switch ($seccion) {
         $seccions = "live";
         $tittle = "Sala en vivo";
         break;
-    case 'constancias':
-        require_once('model/constancia.php');
-        require_once('model/congreso.php');
-        require_once('model/videos.php');
-
-        $C = new Constancia();
-        $Congreso = new Congreso();
-        $V = new Videos();
-
-        $modulos = $A->modulP($user->id);
-        $dias = $Congreso->getAllDias(2025);
-        $accion = "constancias";
-
-        $seccions = "constancias";
-        $tittle = "Constancias";
-        break;
+    
     case 'ondemand':
         switch (isset($_GET['accion']) ? $_GET['accion'] : '') {
             case 'modulo1':
