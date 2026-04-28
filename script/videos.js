@@ -17,8 +17,6 @@ player.on('timeupdate', function(data) {
             sumarMinuto();
         }
     }
-
-
 });
 
 player.on('ended', function() {
@@ -33,7 +31,7 @@ player.on('play', function() {
 function sumarMinuto () {
     console.log("sumar minuto");
     $.ajax({
-        url: 'controller/transmisiones.php?accion=addminutoVideo',
+        url: 'controller/sesiones.php?accion=addminutoVideo',
         type: 'POST',
         dataType: 'json',
         data: {

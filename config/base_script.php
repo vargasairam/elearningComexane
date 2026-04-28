@@ -53,7 +53,6 @@
 			menu();
 		});
 	}
-    
 
     // timeOut es en milisegundos
 	function mostrarAviso(clase, mensaje, timeOut = 2500) {

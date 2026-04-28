@@ -112,7 +112,7 @@ switch ($accion) {
     case 'saveQuestion':
         if (isset($_POST)) {
             $A->setTabla('comentarios');
-            $campos = array("comentario", "usuario_id", "modulo_id", "fecha_hora", "activo");
+            $campos = array("comentario", "usuario_id", "sesion_id", "fecha_hora", "activo");
             $valores = array($_POST['question'], $_SESSION[AMBIENTE]['usuario']['id'], $_POST['modulo'], date("Y-m-d H:i:s"), 1);
             $insertado = $A->insertar($campos, $valores);
             echo json_encode(array("status" => "success"));
