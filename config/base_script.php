@@ -41,7 +41,8 @@
 ?>
 
 <script>
-	var BASE_URL = "http://localhost/elearningComexane/";
+	//var BASE_URL = "http://localhost/elearningComexane/";
+	var BASE_URL = "https://comexane.com/elearningComexane"
 	//var BASE_URL = "<?php echo BASE_URL; ?>";
 </script>
 
