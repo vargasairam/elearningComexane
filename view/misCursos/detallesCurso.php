@@ -1,6 +1,7 @@
 <?php
     $f_inicio = date("d-m-Y", strtotime($curso_info[0]->fecha_hora_inicio));
     $f_fin = date("d-m-Y", strtotime($curso_info[0]->fecha_hora_fin));
+    $socio_id = $_SESSION[AMBIENTE]['usuario']['id'];
 
     
 
@@ -46,9 +47,9 @@
 
                             $visualizacion_completa = true;
 
-                            /*$resultado = $V->getProgresoVideo($video->id, $user->id, $video->duracion);
+                            $resultado = $V->getProgresoVideo($video->id, $socio_id, $video->duracion);
 
-                            //$progreso_video = $resultado->progreso;
+                            $progreso_video = $resultado->progreso;
 
                             $progreso = $progreso_video;
 
@@ -60,7 +61,7 @@
                             if ($progreso < 95) {
 
                                 $visualizacion_completa = false;
-                            } */?>
+                            } ?>
 
                             <div class="item_curso">
                                 <a href="?seccion=cursos&accion=recording&curso=<?= $video->id_curso ?>&id=<?php echo $video->id; ?>">

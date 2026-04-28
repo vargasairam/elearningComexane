@@ -145,7 +145,8 @@
                             <div class="col-6 mb-4">
                                 <label class="form-label">Título del video <span class='obligatorio'>*</span></label>
                                 <input type="text" id="titulo" name="titulo" class="form-control" required placeholder="Ingrese título del video">
-                                <input type="hidden" name="id_curso" value="<?= $id_curso ?>">
+                                <input type="hidden" name="id_curso" value="<?= $_GET['id_curso'] ?>">
+                                <input type="hidden" name="id_modulo" value="<?= $id_modulo ?>">
                             </div>
 
                             <div class="col-6 mb-4">

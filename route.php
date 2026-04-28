@@ -76,6 +76,8 @@ switch ($seccion) {
                 $tittle = $video->titulo;
             break;
             default:
+                include __DIR__ . '/model/videos.php';
+                $V = new Videos();
                 $id = $_GET['curso'];
                 $curso_info = $CC->getCursoById($id);
                 $accion = "detallesCurso";

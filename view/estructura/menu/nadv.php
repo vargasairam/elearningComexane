@@ -5,7 +5,7 @@
 <nav class="nav_menu">
     <ul>
         <li>
-            <a href="<?= BASE_URL ?>elearnigdev/" class="btn"><i class="ri-dashboard-line"></i><span>Inicio</span></a>
+            <a href="<?= BASE_URL ?>elearningComexane/" class="btn"><i class="ri-dashboard-line"></i><span>Inicio</span></a>
         </li>
         <li>
             <button
@@ -49,9 +49,9 @@
             <a href="<?= BASE_URL ?>elearnigdev/redireccionPDF.php?recurso=programa" target="_blank" class="btn"><i class="ri-file-ai-line"></i><span>Programa en PDF</span></a>
         </li> -->
         
-        <li>
+        <!-- <li>
             <a href="?seccion=constancias" class="btn"><i class="ri-award-line"></i><span>Constancias</span></a>
-        </li>
+        </li> -->
         <li>
             <a href="https://comexane.com/socios/" target="_blank" class="btn"><i class="ri-apps-line"></i><span>Sistema socios</span></a>
         </li> 
