@@ -55,8 +55,7 @@ var modulosCurso = $('#tb_modulosCurso').DataTable({
                 return  `<div class="btn-group mb-3" role="group" aria-label="Default button group">
                     <button class="btn btn-outline-warning px-2 me-2 editar" title="Editar datos" data-modulo="${row.id}"><i class="fas fa-pencil"></i></button>
                     <a href="${BASE_URL}administracion/?seccion=modulos&accion=videos&id_modulo=${row.id}&id_curso=${id_curso}"><button class="btn btn-outline-primary px-2 me-2 subir-videos" title="Subir videos" data-modulo="${row.id}"><i class="fas fa-video"></i></button></a>   
-                    <button class="btn btn-outline-info px-2 me-2 subir-constancia" title="Subir constancia" data-modulo="${row.id}"><i class="fas fa-award"></i></button>   
-                    <button class="btn btn-outline-secondary px-2 me-2 ver-poster" title="Ver póster" data-modulo="${row.id}"><i class="fa-solid fa-image"></i></button>   
+                    <button class="btn btn-outline-secondary px-2 me-2 ver-poster" title="Ver póster" data-img="${row.poster_modulo}"><i class="fa-solid fa-image"></i></button>   
                 </div> `
                 /* <button class="btn btn-outline-danger px-2 me-2 eliminar" title="Eliminar aviso" data-aviso="${row.id}"><i class="fa-solid fa-trash"></i></button> */
             }
@@ -156,6 +155,14 @@ $(document).on('submit', '#updateModulo', function(e){
         console.error('Error en el fetch:', err);
         alert('Error de conexión 💀');
     });
+});
+
+//ver portada del video
+$(document).on('click', '.ver-poster', function(e){
+    e.preventDefault();
+    let img = $(this).data('img');
+    $('#div_imagen').html(`<img src="${BASE_URL}imgs/cursos_posters/modulos_posters/${img}" class="img-fluid rounded">`);
+    $('#modalImagen').modal('show');
 });
 
 

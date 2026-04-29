@@ -36,15 +36,15 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modal_curso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade modal-lg" id="modal_curso" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Nuevo Curso </h5>
+                    <h3 class="modal-title" id="exampleModalLabel1">Nuevo Curso </h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="add-new-user pt-0" id="addCurso" enctype="multipart/form-data">
-                    <div class="modal-body">
+                    <div class="modal-body size-f-modal">
                         <div class="row">
                             <div class="col-6 mb-4">
                                 <label class="form-label">Tipo de producto<span class='obligatorio'>*</span></label>
@@ -122,15 +122,15 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modal_update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade modal-lg" id="modal_update" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Actualizar datos del Curso </h5>
+                    <h3 class="modal-title" id="exampleModalLabel1">Actualizar datos del Curso </h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="add-new-user pt-0" id="updateCurso" enctype="multipart/form-data">
-                    <div class="modal-body">
+                    <div class="modal-body size-f-modal">
                         <div class="row">
                             <div class="col-6 mb-4">
                                 <label class="form-label">Tipo de producto</label>

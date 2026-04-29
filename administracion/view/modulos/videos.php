@@ -64,11 +64,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Subir video</h5>
+                    <h3 class="modal-title" id="exampleModalLabel1">Subir video</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="add-new-user pt-0" id="addVideo" enctype="multipart/form-data">
-                    <div class="modal-body">
+                    <div class="modal-body size-f-modal">
                         <div class="row">
                             <div class="col-6 mb-4">
                                 <label class="form-label">Título del video <span class='obligatorio'>*</span></label>
@@ -136,11 +136,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Actualizar datos</h5>
+                    <h3 class="modal-title" id="exampleModalLabel1">Actualizar datos</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="add-new-user pt-0" id="updateVideo">
-                    <div class="modal-body">
+                    <div class="modal-body size-f-modal">
                     <div class="row">
                             <div class="col-6 mb-4">
                                 <label class="form-label">Título del video <span class='obligatorio'>*</span></label>
@@ -227,7 +227,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">        
                 <div class="modal-header bg-info text-white">
-                    <h5 class="modal-title">Vista previa video</h5>
+                    <h3 class="modal-title">Vista previa video</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 

@@ -44,11 +44,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Nuevo módulo</h5>
+                    <h3 class="modal-title" id="exampleModalLabel1">Nuevo módulo</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="add-new-user pt-0" id="addModulo" enctype="multipart/form-data">
-                    <div class="modal-body">
+                    <div class="modal-body size-f-modal">
                         <div class="row">
                             <div class="col-12 mb-4">
                                 <label class="form-label">Título del módulo</label>
@@ -91,11 +91,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Actualizar datos</h5>
+                    <h3 class="modal-title" id="exampleModalLabel1">Actualizar datos</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="add-new-user pt-0" id="updateModulo">
-                    <div class="modal-body">
+                    <div class="modal-body size-f-modal">
                     <div class="row">
                             <div class="col-12 mb-4">
                                 <label class="form-label">Título del módulo</label>
@@ -134,6 +134,25 @@
         </div>
     </div>
 </section>
+
+<!-- MODAL PARA VER LA IMAGEN  -->
+<div class="modal fade" id="modalImagen" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0 position-relative">            
+                <!-- BOTÓN CERRAR -->
+                <button type="button" 
+                    class="btn-close btn-close-white position-absolute top-0 end-0 m-0"
+                    style="z-index: 1055;"
+                    data-bs-dismiss="modal">
+                </button>
+
+                <div class="modal-body text-center">
+                <div id="div_imagen"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 <script>
     let n_modulos = <?= $curso[0]->n_modulos ?>;

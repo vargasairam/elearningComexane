@@ -216,6 +216,11 @@ p {
   margin-top: 0
 }
 
+/* TAMAÑO FUENTE EN MODALS */
+.size-f-modal {
+  font-size: 1.025rem;
+}
+
 abbr[title] {
   cursor: help;
   -webkit-text-decoration: underline dotted;

@@ -33,11 +33,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Nueva tipo de producto</h5>
+                    <h3 class="modal-title" id="exampleModalLabel1">Nueva tipo de producto</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="add-new-user pt-0" id="addTipoProducto">
-                    <div class="modal-body">
+                    <div class="modal-body size-f-modal">
                         <div class="row">
                             <div class="col mb-4">
                                 <label class="form-label">Tipo de producto</label>
@@ -64,11 +64,11 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">Actualizar datos</h5>
+                    <h3 class="modal-title" id="exampleModalLabel1">Actualizar datos</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form class="add-new-user pt-0" id="updateTipoProducto">
-                    <div class="modal-body">
+                    <div class="modal-body size-f-modal">
                         <div class="row">
                             <div class="col mb-4">
                                 <label class="form-label">Tipo de producto</label>
