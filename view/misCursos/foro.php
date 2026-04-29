@@ -36,7 +36,7 @@
                                         <span class="tag_nivel basic">Completo</span>
                                     <?php } ?> -->
 
-                                    <h5 class="mt-1"><?php echo $video->temario; ?></h5>
+                                    <h5 class="mt-1"><?php echo $video->titulo; ?></h5>
 
                                     <div class="text-muted d-flex justify-content-between w-100 gap-1">
                                         <small>

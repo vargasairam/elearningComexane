@@ -43,7 +43,7 @@
             <a href="?seccion=live" class="btn"><i class="ri-play-circle-line"></i><span>Sala en vivo</span></a>
         </li> -->
         <li>
-            <a href="?seccion=foroResidentes" class="btn"><i class="ri-play-circle-line"></i><span>Foro en residentes</span></a>
+            <a href="?seccion=foroResidentes" class="btn"><i class="ri-play-circle-line"></i><span>Foro de residentes</span></a>
         </li>
         <li>
             <a href="?seccion=sesionMensual" class="btn"><i class="ri-calendar-line"></i><span>Sesión mensual</span></a>

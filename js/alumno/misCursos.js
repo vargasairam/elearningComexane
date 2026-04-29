@@ -16,10 +16,10 @@ async function getCursos() {
             const path = `${BASE_URL}/imgs/cursos_posters/`;
             response.forEach(curso => {
                 curso.poster = curso.poster == null ? "Poster.jpg" : curso.poster;
-                let html = `<a  href="" target="_blank">
+                let html = `<a  href="${BASE_URL}?seccion=cursos&accion=detalle&curso=${curso.id_curso}">
                     <div class="grid-item" data-img="${curso.poster}">
                         <figure>
-                            <img id="" class="w-80 rounded-4" src="${path}/${curso.poster}" alt="First slide">
+                            <img id="" class="w-80 rounded-3" src="${path}/${curso.poster}" alt="First slide">
                         </figure>
                         <p id="${curso.titulo}" class="info-titulo my-0 text-center mb-3" style="margin-left: 0px !important; line-height: 17px !important; ">${curso.titulo}</p>
                         <p class="info-curso ms-2 me-2""><strong class="text-info">Descripción:</strong> <span>${curso.descripcion}</span></p>

@@ -93,8 +93,8 @@
                                 <input type="number" name="duracion" class="form-control" required placeholder="Ingrese duración en minutos">
                             </div>
 
-                            <div class="col-12 mb-4">
-                                <small>Para el canal, coloca la URL de Vimeo en el campo correspondiente siguiendo el formato mostrado abajo. Identifica y selecciona la parte resaltada en negritas, ya que corresponde al número del evento: https://player.vimeo.com/video/<strong>1161648349</strong></small>
+                            <div class="col-12 mb-2">
+                                <strong><small style="font-size: 0.975rem;">Para el canal, siguiendo el formato mostrado abajo. Identifica y selecciona la parte resaltada en rojo, ya que corresponde al número del evento: https://player.vimeo.com/video/<strong class="text-danger">1161648349</strong></small></strong>
                             </div>
 
                             <div class="col-6 mb-4">
@@ -168,8 +168,8 @@
                                 <input type="number" id="duracion" name="duracion" class="form-control" required placeholder="Ingrese duración en minutos">
                             </div>
 
-                            <div class="col-12 mb-4">
-                                <small>Para el canal, coloca la URL de Vimeo en el campo correspondiente siguiendo el formato mostrado abajo. Identifica y selecciona la parte resaltada en negritas, ya que corresponde al número del evento: https://player.vimeo.com/video/<strong>1161648349</strong></small>
+                            <div class="col-12 mb-2">
+                                <strong><small style="font-size: 0.975rem;">Para el canal, siguiendo el formato mostrado abajo. Identifica y selecciona la parte resaltada en rojo, ya que corresponde al número del evento: https://player.vimeo.com/video/<strong class="text-danger">1161648349</strong></small></strong>
                             </div>
 
                             <div class="col-6 mb-4">
