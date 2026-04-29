@@ -6,13 +6,13 @@
             <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                 <div class="box_items_dashboard">
                     <div class="d-flex flex-column flex-lg-row flex-xl-row justify-content-center justify-content-md-between align-items-start gap-3 mb-5">
-                        <div class="cards align-self-start flex-fill">
-                            <h3>Mis cursos</h3>
+                        <div class="cards align-self-start flex-fill bg-cursos">
+                            <!-- <h3>Mis cursos</h3> -->
                             <div class="d-flex justify-content-end">
-                                <a href="?seccion=misCursos" class="btn btn-link btn-sm">Ver más <i class="ri-arrow-right-line"></i></a>
+                                <a href="?seccion=misCursos" class="btn btn-link btn-sm text-white">Ver más <i class="ri-arrow-right-line"></i></a>
                             </div>
 
-                            <i class="icon ri-play-circle-line text-white"></i>
+                            <!-- <i class="icon ri-play-circle-line text-white"></i> -->
                         </div>
 
                         <div class="cards align-self-start flex-fill bg-constancias">

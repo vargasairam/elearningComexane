@@ -407,15 +407,20 @@ async function EnviarDatos() {
             },
             body: JSON.stringify({ datos })
         });
+
         let response = await res.json();
         console.log(response)
         
         if(response.status){
             window.location.href = "./index.php";
-        }else{
-            if(response.correo!=null){
+        } else {
+            /*if(response.correo!=null){
                 mostrarAviso("warning",response.correo,3000);
-            }
+            }*/
+            mostrarAviso("error",response.msg, 4000);
+            setTimeout(() => {
+                window.location.href = "./signin.php";
+            }, 4000);
         }
 
     } catch (err) {

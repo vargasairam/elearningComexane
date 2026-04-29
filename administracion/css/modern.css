@@ -3660,8 +3660,8 @@ fieldset:disabled .btn {
 
 .btn-iconos {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #17223c;
-  --bs-btn-border-color: #17223c;
+  --bs-btn-bg: #d11e2d;
+  --bs-btn-border-color: #d11e2d;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: var(--color-primary);
   --bs-btn-hover-border-color: var(--color-primary);

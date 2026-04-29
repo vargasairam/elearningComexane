@@ -14,27 +14,16 @@
         </div>
 
         <div class="cards">
-
             <div class="table-responsive">
-
                 <table class="table table-hover box_table">
-
                     <thead>
-
                         <tr>
-
                             <th class="fw-semibold" scope="col">Curso</th>
-
                             <th class="fw-semibold" scope="col">Tema</th>
-
                             <th class="fw-semibold" scope="col">Módulos</th>
-
                             <th class="fw-semibold" scope="col">Porcentaje visualizado %</th>
-
                             <th class="fw-semibold" scope="col">Constancia</th>
-
                         </tr>
-
                     </thead>
 
                     <!-- <tbody>
@@ -139,13 +128,8 @@
                             </tr>
 
                     </tbody> -->
-
                 </table>
-
             </div>
-
         </div>
-
     </div>
-
 </section>

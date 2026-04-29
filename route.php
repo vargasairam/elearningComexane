@@ -103,7 +103,7 @@ switch ($seccion) {
         $id = $_SESSION[AMBIENTE]['usuario']['id'];
         $seccions = "misCursos";
         $accion = "sesionMensual";
-        $tittle = "Sesiones mensuales";
+        $tittle = "Sesión Mensual";
     break;
     case 'foroResidentes':
         require_once __DIR__ .'/model/foro.php';

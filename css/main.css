@@ -156,17 +156,22 @@ a {
 /* ---- grid-item ---- */
 
 .bg-constancias {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../imgs/banner_constancias.png');
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../imgs/banner_constancias.png');
   background-size: cover;
   background-position: center;
 }
 
 .bg-sesion {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../imgs/banner_sesion_mensual.png');
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../imgs/banner_sesion_mensual.png');
   background-size: cover;
   background-position: center;
 }
 
+.bg-cursos {
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../imgs/banner_miscursos.png');
+  background-size: cover;
+  background-position: center;
+}
 
 
 .cards {

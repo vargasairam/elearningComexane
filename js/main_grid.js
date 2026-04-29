@@ -31,7 +31,7 @@ async function getCursos() {
                 let html = `<a  href="" target="_blank">
                     <div class="grid-item" data-img="${curso.poster}">
                         <figure>
-                            <img id="" class="w-80 rounded-4" src="${path}/${curso.poster}" alt="First slide">
+                            <img id="" class="w-80 rounded-3" src="${path}/${curso.poster}" alt="First slide">
                         </figure>
                         <p id="${curso.titulo}" class="info-titulo my-0 text-center mb-3" style="margin-left: 0px !important; line-height: 17px !important; ">${curso.titulo}</p>
                         <p class="info-curso ms-2 me-2""><strong class="text-info">Costo:</strong> <span>${currency(curso.precio, { symbol: '$', decimal: '.', separator: ',' }).format()}</span></p>
@@ -39,7 +39,7 @@ async function getCursos() {
                         <p class="info-curso ms-2 me-2""><strong class="text-info">Disponible:</strong> <span>${moment(curso.fecha_hora_inicio).format('DD-MM-YYYY')} al ${moment(curso.fecha_hora_fin).format('DD-MM-YYYY')}</span></p>
                         <div class="d-flex justify-content-end gap-2 mb-2 me-2">
                             <button class="btn btn-iconos btn-sm carrito" data-curso-id="${curso.id}" title="Agregar al carrito"><i class="ri-shopping-cart-line"></i> </button>
-                            <button class="btn btn-iconos btn-sm ver-mas" data-curso-id="${curso.id}" title="Ver más"><i class="ri-play-circle-line"></i> </button>
+                           
                         </div>
                     </div>
                 </a>`;
@@ -72,6 +72,8 @@ async function getCursos() {
         console.error("Error en fetch:", err);
     }
 }
+
+/*  <button class="btn btn-iconos btn-sm ver-mas" data-curso-id="${curso.id}" title="Ver más"><i class="ri-play-circle-line"></i> </button> */
 
 $(document).on('click', '.carrito', function(e){
     e.preventDefault();

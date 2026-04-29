@@ -32,10 +32,15 @@ switch ($accion) {
         }
 
         //SE VERIFICA SI EXISTE EL CORREO, PARA ACTUALIZAR O INSERTAR
-        $alumno = $S->emailRepetido($datos['cuenta']['correo'], $datos['fiscal']['curp']);
+        $alumno = $S->emailRepetido($datos['cuenta']['correo']);
+		/*var_dump($datos['cuenta']['correo']);
+		var_dump($datos['fiscal']['curp']);
+		exit;*/
 		
 		if ($alumno->repetido) { // actualizar datos del alumno
-			$campos = array("nombre", "apellidop", "apellidom", "calle", "numext", "numint", "colonia", "delomun", "cp", "estado", "celular", "email", "curp", "prefijotxt", "nombreconstancia", "id_categoria");
+			echo json_encode(['status' => false, 'msg' => 'El correo electrónico ya está registrado en el sistema de socios, puedes iniciar sesión con las mismas credenciales']);
+			exit;
+			/*$campos = array("nombre", "apellidop", "apellidom", "calle", "numext", "numint", "colonia", "delomun", "cp", "estado", "celular", "email", "curp", "prefijotxt", "nombreconstancia", "id_categoria");
 			
 			$valores = array($datos["datos"]["nombre"], 
 			$datos["datos"]["apellidop"], 
@@ -45,7 +50,7 @@ switch ($accion) {
 			$datos["ubicacion"]["interior"], $datos["ubicacion"]["colonia"], $datos["ubicacion"]["municipio"], $datos["ubicacion"]["cp"], $datos["ubicacion"]["estado"], $datos["datos"]["celular"], $datos["cuenta"]["correo"], $datos["fiscal"]["curp"], $datos["datos"]["prefijo"], $datos["datos"]["n_constancia"], $datos["cuenta"]["categoria"]);
 			$A->setTabla("socios");
 			$condicion = " id_socio > 0 and id_socio = ". $alumno->id_socio;
-			$A->actualizar($campos, $valores, $condicion);
+			$A->actualizar($campos, $valores, $condicion); */
 		} else{ // insertar datos del alumno
 			$campos = array("contrasena",
 			"nombre", 
