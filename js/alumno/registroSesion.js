@@ -13,20 +13,24 @@ function getSesiones() {
         type: 'GET',
         success: function(response) {
             response = JSON.parse(response);
+            let option = document.createElement("option");
             if(response.status){
-                //console.log(response.data);
-                let option = document.createElement("option");
-                option.value = "";
-                option.textContent = "Selecciona una sesión";
-                sesion.appendChild(option);
+                console.log(response.data);
+
+                let optionDefault = document.createElement("option");
+                optionDefault.value = "";
+                optionDefault.textContent = "Selecciona una sesión";
+                sesion.appendChild(optionDefault);
+
                 let data = response.data;
+
                 data.forEach(element => {
+                    let option = document.createElement("option"); // 👈 nuevo cada vez
                     option.value = element.id;
                     option.textContent = element.conferencia;
                     sesion.appendChild(option);
                 });
-            } else{
-                let option = document.createElement("option");
+            } else {
                 option.value = "";
                 option.textContent = "No hay sesiones disponibles";
                 sesion.appendChild(option);

@@ -132,8 +132,10 @@ switch ($accion) {
         if(empty($alumno)){
             $data = [
                 'status' => 'error',
-                'msg' => "El correo no existe"
+                'msg' => "El correo no se encuentra registrado en el sistema de socios. Necesitas crear una cuenta para poder registrarte en la sesión."
             ];
+            $H->crearMensaje($data['msg'], $data['status']);
+            header("Location: ../registro.php");
             echo json_encode($data);
             exit;
         }

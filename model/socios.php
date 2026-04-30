@@ -17,12 +17,12 @@ class Socios extends Conexion
         return $resultado;
     }
 
-    public function emailRepetido($email)
+    public function emailRepetido($email, $curp)
 	{
-		$sql = "SELECT count(*) as repetido, id_socio FROM socios WHERE email = :email";
+		$sql = "SELECT count(*) as repetido, id_socio FROM socios WHERE email = :email AND curp = :curp";
 		$sentencia = $this->conexion_db->prepare($sql);
 		$sentencia->bindParam(':email', $email);
-		//$sentencia->bindParam(':curp', $curp);
+		$sentencia->bindParam(':curp', $curp);
 		$sentencia->execute();
 		$resultado = $sentencia->fetch(PDO::FETCH_OBJ);
 		return $resultado;

@@ -17,7 +17,7 @@ class Catalogos extends Conexion
     }
 
     public function GetCategoriasNSocio(){
-        $sql = "SELECT id_categoria, nombrecategoria AS nombre_categoria, es_socio FROM categorias WHERE es_socio = 0";
+        $sql = "SELECT id_categoria, nombrecategoria AS nombre_categoria, es_socio, nombre_elearning FROM categorias WHERE es_socio = 0 AND id_categoria IN (12, 14, 17, 21, 22)";
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->execute();
         $resultado = $sentencia->fetchAll(PDO::FETCH_OBJ);
@@ -106,7 +106,7 @@ class Catalogos extends Conexion
 
     public function GetSesiones(){
         $f_actual = date("Y-m-d H:i:s");
-        $sql = "SELECT * FROM e_conferencias WHERE fecha_hora_inicio > :f_actual";
+        $sql = "SELECT * FROM e_conferencias WHERE fecha_hora_inicio > :f_actual ORDER BY fecha_hora_inicio DESC";
         $sentencia = $this->conexion_db->prepare($sql);
         $sentencia->execute([
             ':f_actual' => $f_actual

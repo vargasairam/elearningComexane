@@ -158,7 +158,7 @@ function setCategorias(data){
     data.forEach(element => {
         let option = document.createElement('option');
         option.value = element.id_categoria;
-        option.textContent = element.nombre_categoria;
+        option.textContent = element.nombre_elearning;
         select.appendChild(option);
     });
 }
@@ -341,37 +341,39 @@ correo_input = document.getElementById('Correo');
 
 correo_input.addEventListener('blur', function() {
     let correo_busq = this.value;
-    $.ajax({
-        url : "controller/registro.php?accion=correoSocio&correo="+correo_busq,
-        type: "GET",
-        success: function(data){
-            let respuesta = JSON.parse(data);
-
-            if(respuesta.success){
-                console.log(respuesta.data);
-                mostrarAviso("warning",'Ya tienes una cuenta como socio, puedes iniciar sesión con las mismas credenciales.',3000);
-                /*$('#Categoria').val(respuesta.data[0].id_categoria);
-                $('#Nombres').val(respuesta.data[0].nombre);
-                $('#Apellidop').val(respuesta.data[0].apellidop);
-                $('#Apellidom').val(respuesta.data[0].apellidom);
-                $('#celular').val(respuesta.data[0].celular);
-                $('#nombreConstancia').val(respuesta.data[0].nombreconstancia);
-                $('#prefijos').val(respuesta.data[0].prefijotxt);
-                $('#rfc').val(respuesta.data[0].rfc);
-                $('#curp').val(respuesta.data[0].curp);
-                $('#calle').val(respuesta.data[0].calle);
-                $('#n_interior').val(respuesta.data[0].numint);
-                $('#n_exterior').val(respuesta.data[0].numext);
-                $('#colonia').val(respuesta.data[0].colonia);
-                $('#municipio').val(respuesta.data[0].delomun);
-                $('#cp').val(respuesta.data[0].cp);
-                $('#ced_prof').val(respuesta.data[0].cedpro);
-                $('#ced_esp').val(respuesta.data[0].cedesp);*/
-            } else {
-                $('#Categoria').val(12);
+    if(correo_busq != ''){
+        $.ajax({
+            url : "controller/registro.php?accion=correoSocio&correo="+correo_busq,
+            type: "GET",
+            success: function(data){
+                let respuesta = JSON.parse(data);
+    
+                if(respuesta.success){
+                    console.log(respuesta.data);
+                    mostrarAviso("warning",'Ya tienes una cuenta como socio, puedes iniciar sesión con las mismas credenciales.',3000);
+                    /*$('#Categoria').val(respuesta.data[0].id_categoria);
+                    $('#Nombres').val(respuesta.data[0].nombre);
+                    $('#Apellidop').val(respuesta.data[0].apellidop);
+                    $('#Apellidom').val(respuesta.data[0].apellidom);
+                    $('#celular').val(respuesta.data[0].celular);
+                    $('#nombreConstancia').val(respuesta.data[0].nombreconstancia);
+                    $('#prefijos').val(respuesta.data[0].prefijotxt);
+                    $('#rfc').val(respuesta.data[0].rfc);
+                    $('#curp').val(respuesta.data[0].curp);
+                    $('#calle').val(respuesta.data[0].calle);
+                    $('#n_interior').val(respuesta.data[0].numint);
+                    $('#n_exterior').val(respuesta.data[0].numext);
+                    $('#colonia').val(respuesta.data[0].colonia);
+                    $('#municipio').val(respuesta.data[0].delomun);
+                    $('#cp').val(respuesta.data[0].cp);
+                    $('#ced_prof').val(respuesta.data[0].cedpro);
+                    $('#ced_esp').val(respuesta.data[0].cedesp);*/
+                } else {
+                    $('#Categoria').val(12);
+                }
             }
-        }
-    });
+        });
+    }    
 });
 
 $(document).on('blur', '#Nombres', function(){

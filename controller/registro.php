@@ -32,13 +32,13 @@ switch ($accion) {
         }
 
         //SE VERIFICA SI EXISTE EL CORREO, PARA ACTUALIZAR O INSERTAR
-        $alumno = $S->emailRepetido($datos['cuenta']['correo']);
+        $alumno = $S->emailRepetido($datos['cuenta']['correo'], $datos['fiscal']['curp']);
 		/*var_dump($datos['cuenta']['correo']);
 		var_dump($datos['fiscal']['curp']);
 		exit;*/
 		
 		if ($alumno->repetido) { // actualizar datos del alumno
-			echo json_encode(['status' => false, 'msg' => 'El correo electrónico ya está registrado en el sistema de socios, puedes iniciar sesión con las mismas credenciales']);
+			echo json_encode(['status' => false, 'msg' => 'El correo electrónico ya está registrado en el sistema de socios asociado a la CURP proporcionada, puedes iniciar sesión con las mismas credenciales, si no recuerdas tu contraseña, puedes recuperarla.']);
 			exit;
 			/*$campos = array("nombre", "apellidop", "apellidom", "calle", "numext", "numint", "colonia", "delomun", "cp", "estado", "celular", "email", "curp", "prefijotxt", "nombreconstancia", "id_categoria");
 			

@@ -205,7 +205,7 @@ class Helper extends Conexion
     private function sendEmail($datos)
     {
 
-        $apikey = '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';
+        $apikey = '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';
         // Configure API key authorization: api-key
         $config = Configuration::getDefaultConfiguration()->setApiKey('api-key', $apikey);
 
