@@ -4,7 +4,7 @@
 
     <div class="box_brand text-center">
         <a href="<?= BASE_URL ?>elearningComexane/">
-            <img src="<?= $configuracion->logo ?>" alt="Logo <?= $configuracion->prefijo ?>" class="brand_logo" />
+            <img src="<?= BASE_URL ?>elearningComexane/imgs/comexane-logo.svg" alt="Logo <?= $configuracion->prefijo ?>" class="brand_logo" />
         </a>
     </div>
 
