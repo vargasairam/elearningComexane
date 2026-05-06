@@ -1,6 +1,6 @@
 <section class="content_global">
     <?php include_once "view/estructura/header.php"; ?>
-    <a href="?seccion=cursos&accion=detalle&curso=<?= $video->id_curso ?>" class="btn btn-secondary btn_back mt-3 btn-sm"><i class="ri-arrow-left-line ri-lg"></i></a>
+    <a href="?seccion=foroResidentes" class="btn btn-secondary btn_back mt-3 btn-sm"><i class="ri-arrow-left-line ri-lg"></i></a>
     <div class="content_ondemand">
         <div class="drawer_video_live">
             <div class="box_info_video_live mt-2 mb-4">
