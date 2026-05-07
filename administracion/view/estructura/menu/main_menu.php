@@ -6,7 +6,7 @@
         </a>
     </div>
 
-    <?php include_once "nadv_admin.php"; ?>
+    <?php include_once __DIR__."/nadv_admin.php"; ?>
 
     <footer class="footer">
         ©<?= date("Y") ?> Solución desarrollada por
